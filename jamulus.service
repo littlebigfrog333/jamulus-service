@@ -1,0 +1,26 @@
+[Unit]
+Description=Jamulus-Server
+After=network.target
+
+[Service]
+Type=simple
+User=jamulus
+Group=nogroup
+NoNewPrivileges=true
+ProtectSystem=true
+ProtectHome=true
+Nice=-20
+IOSchedulingClass=realtime
+IOSchedulingPriority=0
+
+
+ExecStart=/usr/local/bin/Jamulus -s -n -o “Tom Crathorne’s Server;Sheffield;[224]” -w “Welcome to Tom’s Server!”
+     
+Restart=on-failure
+RestartSec=30
+StandardOutput=journal
+StandardError=inherit
+SyslogIdentifier=jamulus
+
+[Install]
+WantedBy=multi-user.target
