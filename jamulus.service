@@ -14,7 +14,7 @@ IOSchedulingClass=realtime
 IOSchedulingPriority=0
 
 
-ExecStart=/usr/local/bin/Jamulus -s -n -o “Tom Crathorne’s Server;Sheffield;[224]”
+ExecStart=/usr/local/bin/Jamulus -s -n
 
 Restart=on-failure
 RestartSec=30
